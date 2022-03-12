@@ -1,18 +1,26 @@
-public class Ques1{
 
-	public static void main(String[] args) {
-		int a=1, b=1, range, c, sum=0;
-		float average=0;
-		range=1;
-		   while( range<=20 )
-		   {
-		     System.out.print(a +" ");
-		      sum =sum+ a;
-		      c = a + b;
-		      a = b;
-		      b = c;
-		      range++;
-		   }
+
+
+
+import java.util.*;
+
+public class Fibonacci{
+public static void main(String[] args) throws Exception {
+Scanner input=new Scanner(System.in);
+System.out.print("Enter value of n: ");
+int sum=0;
+    int num = input.nextInt();
+    int f1=0,f2=0,f3=1;
+    for(int i=1;i<=num;i++){
+        System.out.println(f3);
+        sum+=f3;
+        f1=f2;
+        f2=f3;
+        f3=f1+f2;
+    }
+    System.out.println("Sum of Fibonacci Series: "+sum);
+}
+}
 		   average=sum/20;
 		System.out.println("average is "+average);
 	}
