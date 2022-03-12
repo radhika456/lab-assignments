@@ -18,6 +18,8 @@ public class Q3 {
 		int arr[]= {2,4,6,8,10};
 		
 		int copyOfArr[]=ArrayOp.copyOf(arr);
+		for(int i=0;i<5;i++)
+				  System.out.println(copyOfArr[i]);
 	}
 }
 
