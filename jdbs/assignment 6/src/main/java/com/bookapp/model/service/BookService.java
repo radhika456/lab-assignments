@@ -1,7 +1,7 @@
-package com.owner.model.service;
+package com.bookapp.model.service;
 
 import java.util.List;
-import com.owner.model.dao.Book;
+import com.bookapp.model.dao.Book;
 
 public interface BookService {
 	public List<Book> getAll();
