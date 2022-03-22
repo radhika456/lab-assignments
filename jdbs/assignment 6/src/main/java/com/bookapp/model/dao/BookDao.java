@@ -1,4 +1,4 @@
-package com.owner.model.dao;
+package com.bookapp.model.dao;
 import java.util.List;
 
 public interface BookDao {
