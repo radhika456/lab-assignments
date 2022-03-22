@@ -25,10 +25,10 @@ public class AddBook {
 				stmt=connection.
 						prepareStatement("insert into book(book_id, book_name, book_author, book_price) values(?,?,?,?)");
 				
-				stmt.setInt(1, 10006);
-				stmt.setString(2, "Making of New India");
-				stmt.setString(3, "Dr. Bibek Debroy");
-				stmt.setInt(4, 700);
+				stmt.setInt(1, 1005);
+				stmt.setString(2, "Harry Potter Part 1");
+				stmt.setString(3, "J.K Rolling");
+				stmt.setInt(4, 2000);
 				
 				int noOfRowsEffected= stmt.executeUpdate();
 				System.out.println(noOfRowsEffected);
