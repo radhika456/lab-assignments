@@ -10,9 +10,9 @@ public class BookCollection {
 		init();
 	}
 	private void init() {
-		books.add(new Book(1, "java in action", "foo"));
-		books.add(new Book(109, "power of mind", "bar"));
-		books.add(new Book(19, "Java in depth", "jar"));
+		books.add(new Book(1, "java basics", "abc"));
+		books.add(new Book(109, "advance c++", "efg"));
+		books.add(new Book(19, "Java in depth", "hij"));
 	}
 	
 	public boolean hasBook(Book b) {
@@ -23,10 +23,11 @@ System.out.println("Which book are you searching for today?");
     {
         if (book.getTitle().contains(booksearch) || book.getAuthor().contains(booksearch)
         {
-             return book; 
+                System.out.println("Owner of Book is "+ownerName+" having book with Id no. - "+b.getId()+",Title : "+b.getTitle()+" and Book Author : "+b.getAuthor());
+		return true; 
         }
     }
-    return null; //no book was found
+    return false; //no book was found
 	}
 	
 }
