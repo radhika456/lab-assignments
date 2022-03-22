@@ -1,9 +1,9 @@
-package com.owner.model.service;
+package com.bookapp.model.service;
 
 import java.util.List;
-import com.owner.model.dao.Book;
-import com.owner.model.dao.BookDao;
-import com.owner.model.dao.BookDaoImpl;
+import com.bookapp.model.dao.Book;
+import com.bookapp.model.dao.BookDao;
+import com.bookapp.model.dao.BookDaoImpl;
 
 
 public class BoookServiceImpl implements BookService{
