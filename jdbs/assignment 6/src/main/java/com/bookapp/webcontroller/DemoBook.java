@@ -1,8 +1,8 @@
 package com.bookapp.web.controller;
 import java.util.*;
-import com.owner.model.dao.Book;
-import com.owner.model.service.BookService;
-import com.owner.model.service.BoookServiceImpl;
+import com.bookapp.model.dao.Book;
+import com.bookapp.model.service.BookService;
+import com.bookapp.model.service.BoookServiceImpl;
 
 public class DemoBook {
 
