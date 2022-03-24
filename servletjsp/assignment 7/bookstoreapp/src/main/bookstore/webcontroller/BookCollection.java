@@ -10,20 +10,20 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.bookapp.model.dao.Book;
+import com.bookapp.model.service.BookService;
+import com.bookapp.model.service.BookServiceImpl;
  
 
 public class ControllerServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private BookDAO bookDAO;
- 
-    public void init() {
-        String jdbcURL = getServletContext().getInitParameter("jdbcURL");
-        String jdbcUsername = getServletContext().getInitParameter("jdbcUsername");
-        String jdbcPassword = getServletContext().getInitParameter("jdbcPassword");
- 
-        bookDAO = new BookDAO(jdbcURL, jdbcUsername, jdbcPassword);
- 
-    }
+    private BookService bookService;
+
+	public BookController() {
+		bookService = new BookServiceImpl();
+	}
+
  
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -36,7 +36,7 @@ public class ControllerServlet extends HttpServlet {
  
         try {
             switch (action) {
-            case "/new":
+            case "/add":
                 showNewForm(request, response);
                 break;
             case "/insert":
@@ -44,9 +44,6 @@ public class ControllerServlet extends HttpServlet {
                 break;
             case "/delete":
                 deleteBook(request, response);
-                break;
-            case "/edit":
-                showEditForm(request, response);
                 break;
             case "/update":
                 updateBook(request, response);
@@ -68,9 +65,9 @@ public class ControllerServlet extends HttpServlet {
         dispatcher.forward(request, response);
     }
  
-    private void showNewForm(HttpServletRequest request, HttpServletResponse response)
+    private void addBook(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("BookForm.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("Add.jsp");
         dispatcher.forward(request, response);
     }
  
@@ -78,7 +75,7 @@ public class ControllerServlet extends HttpServlet {
             throws SQLException, ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         Book existingBook = bookDAO.getBook(id);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("BookForm.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("Update.jsp");
         request.setAttribute("book", existingBook);
         dispatcher.forward(request, response);
  
