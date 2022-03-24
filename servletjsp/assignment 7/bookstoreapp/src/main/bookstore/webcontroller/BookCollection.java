@@ -64,7 +64,7 @@ public class ControllerServlet extends HttpServlet {
             throws SQLException, IOException, ServletException {
         List<Book> listBook = bookDAO.listAllBooks();
         request.setAttribute("listBook", listBook);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("BookList.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("show.jsp");
         dispatcher.forward(request, response);
     }
  
