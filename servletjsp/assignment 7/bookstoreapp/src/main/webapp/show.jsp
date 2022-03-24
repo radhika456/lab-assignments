@@ -31,8 +31,8 @@
                     <td><c:out value="${book.title}" /></td>
                     <td><c:out value="${book.author}" /></td>
                     <td><c:out value="${book.price}" /></td>
-                    <td><a href="bookcontroller?action=del&id=<c:out value="${emp.id}"/>">delete</a></td>
-					<td><a href="bookcontroller?action=update&id=<c:out value="${emp.id}"/>">update</a></td>
+                    <td><a href="bookcontroller?action=del&id=<c:out value="${book.id}"/>">delete</a></td>
+					<td><a href="bookcontroller?action=update&id=<c:out value="${book.id}"/>">update</a></td>
                 </tr>
             </c:forEach>
         </table>
