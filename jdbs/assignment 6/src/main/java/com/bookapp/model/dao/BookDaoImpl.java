@@ -2,8 +2,8 @@ package com.bookapp.model.dao;
 
 import java.sql.*;
 import java.util.*;
-import com.owner.factory.ConnectionFactory;
-import com.owner.model.exception.BookNotFoundException;
+import com.bookapp.factory.ConnectionFactory;
+import com.bookapp.model.exception.BookNotFoundException;
 
 public class BookDaoImpl implements BookDao {
 
