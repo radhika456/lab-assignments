@@ -39,7 +39,7 @@ public class BookDaoImpl implements BookDao{
 		
 		try {
 			String add_book_query=
-			"insert into books(isbn, title, author, pubDate, price) values(?,?,?,?,?)";
+			"insert into books( title, author, price) values(?,?,?)";
 			PreparedStatement pstmt=connection.prepareStatement(add_book_query, 
 					Statement.RETURN_GENERATED_KEYS);
 			
